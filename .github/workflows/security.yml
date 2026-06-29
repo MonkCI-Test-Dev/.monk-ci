@@ -1,0 +1,12 @@
+name: Monk CI Shield
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+jobs:
+  security-scan:
+    uses: MonkCi-Inc/security-workflows/.github/workflows/monkci-security-scan.yml@main
+    permissions:
+      contents: read
+      pull-requests: write
+      security-events: write
+      checks: write
